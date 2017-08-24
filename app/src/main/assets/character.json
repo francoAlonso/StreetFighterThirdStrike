@@ -1,0 +1,118 @@
+{
+  "characters":[
+    {
+      "name": "Ryu",
+      "profile_pic": "ryu",
+      "stats": "ryu_stats",
+      "playlist_id": "PLhN5s-lbOC36FDwpPF5e3Zdmm-2QcRRY-"
+    },
+    {
+      "name": "Alex",
+      "profile_pic": "alex",
+      "stats": "alex_stats",
+      "playlist_id": "PLhN5s-lbOC36dU0VXN15wkWUM2TF8dd7G"
+    },
+    {
+      "name": "Akuma",
+      "profile_pic": "akuma",
+      "stats": "akuma_stats",
+      "playlist_id": "PLhN5s-lbOC36KdFiy9WhWZYqIszO6IooM"
+    },
+    {
+      "name": "Yun",
+      "profile_pic": "yun",
+      "stats": "yun_stats",
+      "playlist_id": "PLhN5s-lbOC37RUmoUddVqS0ybIP8eWOtr"
+    },
+    {
+      "name": "Yang",
+      "profile_pic": "yang",
+      "stats": "yang_stats",
+      "playlist_id": "PLhN5s-lbOC36NjgPWqTMr8Var3ZD3Kt_p"
+    },
+    {
+      "name": "Ibuki",
+      "profile_pic": "ibuki",
+      "stats": "ibuki_stats",
+      "playlist_id": "PLhN5s-lbOC36zlHlf4YXI0hzfruIqhkri"
+    },
+    {
+      "name": "Hugo",
+      "profile_pic": "hugo",
+      "stats": "hugo_stats",
+      "playlist_id": "PLhN5s-lbOC37nXQEjBOvy0j3dxqbia3KT"
+    },
+    {
+      "name": "Chun-Li",
+      "profile_pic": "chun_li",
+      "stats": "chun_li_stats",
+      "playlist_id": "PLhN5s-lbOC348dlyZ_D3hATlG7eoZzxIg"
+    },
+    {
+      "name": "Dudley",
+      "profile_pic": "dudley",
+      "stats": "dudley_stats",
+      "playlist_id": "PLhN5s-lbOC364x2oL25ObzDovCZ5l4SQF"
+    },
+    {
+      "name": "Elena",
+      "profile_pic": "elena",
+      "stats": "elena_stats",
+      "playlist_id": "PLhN5s-lbOC34k_S1F4U5Xyg3rV_bUDfKS"
+    },
+    {
+      "name": "Ken",
+      "profile_pic": "ken",
+      "stats": "ken_stats",
+      "playlist_id": "PLhN5s-lbOC35g5_IEyA8VLq9ZDScRZMR3"
+    },
+    {
+      "name": "Makoto",
+      "profile_pic": "makoto",
+      "stats": "makoto_stats",
+      "playlist_id": "PLhN5s-lbOC36V8XMCh6QJnNpCY6-ZDL0l"
+    },
+    {
+      "name": "Necro",
+      "profile_pic": "necro",
+      "stats": "necro_stats",
+      "playlist_id": "PLhN5s-lbOC354Gpp5px-7o3S_wHs_MsCA"
+    },
+    {
+      "name": "Oro",
+      "profile_pic": "oro",
+      "stats": "oro_stats",
+      "playlist_id": "PLhN5s-lbOC3799mJVV7vyBdlWAf2ZD4tG"
+    },
+    {
+      "name": "Q",
+      "profile_pic": "q",
+      "stats": "q_stats",
+      "playlist_id": "PLhN5s-lbOC351al2cXgIWmUped3m_PZ0R"
+    },
+    {
+      "name": "Remy",
+      "profile_pic": "remy",
+      "stats": "remy_stats",
+      "playlist_id": "PLhN5s-lbOC36m7as8fX7SNhJr2gy375Tl"
+    },
+    {
+      "name": "Sean",
+      "profile_pic": "sean",
+      "stats": "sean_stats",
+      "playlist_id": "PLhN5s-lbOC35kVfGng7XszFPwK4pOtw_1"
+    },
+    {
+      "name": "Twelve",
+      "profile_pic": "twelve",
+      "stats": "twelve_stats",
+      "playlist_id": "PLhN5s-lbOC35a4V5zHOIdYnTL9QMhBoJf"
+    },
+    {
+      "name": "Urien",
+      "profile_pic": "urien",
+      "stats": "urien_stats",
+      "playlist_id": "PLhN5s-lbOC37qmlsDaWTHwINmbM27PaVL"
+    }
+  ]
+}

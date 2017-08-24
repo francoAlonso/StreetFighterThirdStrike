@@ -1,0 +1,13 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nogu96.streetfighterthirdstrike.view.character_detail.character_stats.CharacterStatsFragment">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/character_stats_photo_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ryu"/>
+
+</FrameLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Street FighterThirdStrike</string>
+
+    <string name="text_special_moves">Special Moves</string>
+    <string name="text_super_arts">Super Arts</string>
+    <string name="text_command_moves">Command moves</string>
+    <string name="text_target_combos">Target Combos</string>
+
+    <string name="tab_moves">Moves</string>
+    <string name="tab_stats">Stats</string>
+    <string name="tab_videos">Videos</string>
+
+    <string name="internet_conection">Please connect to internet</string>
+
+</resources>
