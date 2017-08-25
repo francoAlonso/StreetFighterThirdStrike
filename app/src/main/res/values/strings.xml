@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Street FighterThirdStrike</string>
+    <string name="app_name">Street fighter third strike</string>
+
+    <string name="youtube_api_key">AIzaSyCCgjOps8aBB5Htu2FNrxg4PN1o70eY6ao</string>
 
     <string name="text_special_moves">Special Moves</string>
     <string name="text_super_arts">Super Arts</string>
