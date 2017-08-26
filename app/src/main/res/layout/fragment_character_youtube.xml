@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     tools:context="nogu96.streetfighterthirdstrike.view.character_detail.youtube_links.CharacterYoutubeFragment">
 
+    <ProgressBar
+        android:id="@+id/progress_bar_character_youtube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_character_youtube"
         android:layout_width="match_parent"

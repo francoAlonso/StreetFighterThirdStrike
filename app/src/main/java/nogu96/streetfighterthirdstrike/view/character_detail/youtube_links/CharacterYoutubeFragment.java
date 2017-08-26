@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,6 @@ import nogu96.streetfighterthirdstrike.R;
 import nogu96.streetfighterthirdstrike.controller.Controller;
 import nogu96.streetfighterthirdstrike.internet.ResultListener;
 import nogu96.streetfighterthirdstrike.model.pojo.youtube.Youtube;
-import nogu96.streetfighterthirdstrike.view.character_list.CharacterListFragment;
 
 public class CharacterYoutubeFragment extends Fragment {
 
@@ -25,27 +25,37 @@ public class CharacterYoutubeFragment extends Fragment {
     private AdapterYoutube adapterYoutube;
     private RecyclerView recyclerView;
     private OnFragmentInteraction fragmentInteraction;
-
+    private View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_character_youtube, container, false);
+        view = inflater.inflate(R.layout.fragment_character_youtube, container, false);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_character_youtube);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        new Controller().getYoutubeList(getContext(), getArguments().getString(YOUTUBE_KEY), new ResultListener<List<Youtube>>() {
-            @Override
-            public void finish(List<Youtube> resultado) {
-                adapterYoutube = new AdapterYoutube(getContext(), resultado);
-                adapterYoutube.setListener(new YoutubeListener());
-                recyclerView.setAdapter(adapterYoutube);
-            }
-        });
+        getVideosFromYoutube();
 
         return view;
+    }
+
+    private void getVideosFromYoutube(){
+        try {
+            new Controller().getYoutubeList(getContext(), getArguments().getString(YOUTUBE_KEY), new ResultListener<List<Youtube>>() {
+                @Override
+                public void finish(List<Youtube> resultado) {
+                    view.findViewById(R.id.progress_bar_character_youtube).setVisibility(View.GONE);
+
+                    adapterYoutube = new AdapterYoutube(getContext(), resultado);
+                    adapterYoutube.setListener(new YoutubeListener());
+                    recyclerView.setAdapter(adapterYoutube);
+                }
+            });
+        }catch (Exception e){
+            Log.e("error: ",e.toString());
+        }
     }
 
     @Override

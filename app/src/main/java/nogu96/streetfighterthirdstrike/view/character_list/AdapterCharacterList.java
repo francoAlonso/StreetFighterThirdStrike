@@ -14,6 +14,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import nogu96.streetfighterthirdstrike.R;
+import nogu96.streetfighterthirdstrike.model.dao.DAOAllCharacters;
 import nogu96.streetfighterthirdstrike.model.pojo.character.Character;
 
 public class AdapterCharacterList extends RecyclerView.Adapter implements View.OnClickListener{
@@ -21,8 +22,10 @@ public class AdapterCharacterList extends RecyclerView.Adapter implements View.O
     private List<Character> characterList;
     private View.OnClickListener listener;
     private LayoutInflater inflater;
+    private Context context;
 
     public AdapterCharacterList(Context context, List<Character> characterList){
+        this.context = context;
         this.characterList = characterList;
         inflater = LayoutInflater.from(context);
     }
@@ -59,7 +62,7 @@ public class AdapterCharacterList extends RecyclerView.Adapter implements View.O
         return characterList.get(position);
     }
 
-    private void setListToShow(List<Character> characterList){
+    public void setListToShow(List<Character> characterList){
         this.characterList = characterList;
         notifyDataSetChanged();
     }
@@ -67,15 +70,12 @@ public class AdapterCharacterList extends RecyclerView.Adapter implements View.O
     public void searchForCharacter(String query){
         List<Character> newCharacterList = new ArrayList<>();
 
-        if (!query.equals("")) {
-            for (Character character : characterList) {
-                if (character.getName().contains(query)) {
+        for (Character character : new DAOAllCharacters().getCharacterList(context)) {
+            if (character.getName().toLowerCase().contains(query)) {
                     newCharacterList.add(character);
-                }
             }
-        }else{
-            newCharacterList = characterList;
         }
+
         setListToShow(newCharacterList);
     }
 
