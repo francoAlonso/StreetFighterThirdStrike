@@ -1,6 +1,7 @@
 package nogu96.streetfighterthirdstrike.model.dao.youtube;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.google.gson.Gson;
 

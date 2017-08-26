@@ -1,0 +1,121 @@
+{
+  "special_moves": [
+    {
+      "name": "Hadouken",
+      "moveList": [
+        "down",
+        "right_down",
+        "right",
+        "punch"
+      ]
+    },
+    {
+      "name": "Tatsumaki Senpukyaku",
+      "moveList": [
+        "down",
+        "left_down",
+        "left",
+        "kick"
+      ]
+    },
+    {
+      "name": "Shoryuken",
+      "moveList": [
+        "right",
+        "down",
+        "right_down",
+        "right",
+        "punch"
+      ]
+    },
+    {
+      "name": "Joudan Sokotou Geri",
+      "moveList": [
+        "left",
+        "left_down",
+        "down",
+        "right_down",
+        "right",
+        "kick"
+      ]
+    }
+  ],
+  "super_arts": [
+    {
+      "name": "Shinkuu Hadouken",
+      "moveList": [
+        "down",
+        "right_down",
+        "right",
+        "down",
+        "right_down",
+        "right",
+        "punch"
+      ]
+    },
+    {
+      "name": "Shin Shoryuken",
+      "moveList": [
+        "down",
+        "right_down",
+        "right",
+        "down",
+        "right_down",
+        "right",
+        "punch"
+      ]
+    },
+    {
+      "name": "Denjin Hadoukeni",
+      "moveList": [
+        "down",
+        "right_down",
+        "right",
+        "down",
+        "right_down",
+        "right",
+        "punch"
+      ]
+    }
+  ],
+  "command_moves":[
+    {
+      "name": "Dash Punch",
+      "moveList": [
+        "right",
+        "high_punch"
+      ]
+    },{
+      "name": "Overhead Punch",
+      "moveList": [
+        "right",
+        "medium_punch"
+      ]
+    }
+  ],
+  "target_combos": [
+    {
+      "name": "combo1",
+      "moveList": [
+        "far",
+        "high_punch",
+        "high_kick"
+      ]
+    },
+    {
+      "name": "combo2",
+      "moveList": [
+        "low_punch",
+        "low_kick"
+      ]
+    },
+    {
+      "name": "combo3",
+      "moveList": [
+        "left",
+        "low_punch",
+        "low_kick"
+      ]
+    }
+  ]
+}

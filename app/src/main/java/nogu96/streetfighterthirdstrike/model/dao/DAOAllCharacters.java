@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nogu96.streetfighterthirdstrike.model.pojo.character.Attacks;
-import nogu96.streetfighterthirdstrike.model.pojo.character.AttacksContainer;
 import nogu96.streetfighterthirdstrike.model.pojo.character.Character;
 import nogu96.streetfighterthirdstrike.model.pojo.character.CharacterContainer;
 
@@ -41,16 +40,9 @@ public class DAOAllCharacters {
         try{
 
             AssetManager manager = context.getAssets();//necesito del context para acceder a los archivos
-            BufferedReader bufferReaderIn = new BufferedReader(new InputStreamReader(manager.open("character_attack.json")));// bufferedReader me permite leer un archivo json
+            BufferedReader bufferReaderIn = new BufferedReader(new InputStreamReader(manager.open(name+".json")));// bufferedReader me permite leer un archivo json
             Gson gson = new Gson();
-            AttacksContainer attacksContainer = gson.fromJson(bufferReaderIn, AttacksContainer.class);
-
-            for (Attacks attack : attacksContainer.getAttackList()){
-                if(name.equals(attack.getCharacterName())){
-                    return attack;
-                }
-            }
-
+            return gson.fromJson(bufferReaderIn, Attacks.class);
         }catch (IOException e) {
             e.printStackTrace();
         }

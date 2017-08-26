@@ -10,6 +10,7 @@ import java.net.UnknownHostException;
 public class HTTPConnectionManager {
 	private HttpURLConnection connection;
 
+	private static final int CONNECTION_TIME_OUT = 10000;
 
 	public String getRequestString(String url) throws DAOException{
 		String result = null;
@@ -18,7 +19,7 @@ public class HTTPConnectionManager {
 
 		try {
 			connection = (HttpURLConnection) new URL(url).openConnection();
-			connection.setReadTimeout(10000);  //In milliseconds.
+			connection.setReadTimeout(CONNECTION_TIME_OUT);  //In milliseconds.
 			connection.setRequestMethod("GET");
 			inputStream = connection.getInputStream();
 			result = convertStreamToString(inputStream);
@@ -52,7 +53,7 @@ public class HTTPConnectionManager {
 
 		try {
 			connection = (HttpURLConnection) new URL(url).openConnection();
-			connection.setReadTimeout(10000);  //In milliseconds.
+			connection.setReadTimeout(CONNECTION_TIME_OUT);  //In milliseconds.
 			connection.setRequestMethod("GET");
 			inputStream = connection.getInputStream();
 		} catch (SocketTimeoutException e) {

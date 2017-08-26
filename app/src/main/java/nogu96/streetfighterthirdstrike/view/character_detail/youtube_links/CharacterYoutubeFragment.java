@@ -42,21 +42,17 @@ public class CharacterYoutubeFragment extends Fragment {
     }
 
     private void getVideosFromYoutube(){
-        try {
-            new Controller().getYoutubeList(getContext(), getArguments().getString(YOUTUBE_KEY), new ResultListener<List<Youtube>>() {
-                @Override
-                public void finish(List<Youtube> resultado) {
-                    view.findViewById(R.id.progress_bar_character_youtube).setVisibility(View.GONE);
-
-                    adapterYoutube = new AdapterYoutube(getContext(), resultado);
-                    adapterYoutube.setListener(new YoutubeListener());
-                    recyclerView.setAdapter(adapterYoutube);
-                }
-            });
-        }catch (Exception e){
-            Log.e("error: ",e.toString());
-        }
+        new Controller().getYoutubeList(getContext(), getArguments().getString(YOUTUBE_KEY), new ResultListener<List<Youtube>>() {
+            @Override
+            public void finish(List<Youtube> resultado) {
+                view.findViewById(R.id.progress_bar_character_youtube).setVisibility(View.GONE);
+                adapterYoutube = new AdapterYoutube(getContext(), resultado);
+                adapterYoutube.setListener(new YoutubeListener());
+                recyclerView.setAdapter(adapterYoutube);
+            }
+        });
     }
+
 
     @Override
     public void onAttach(Context context) {

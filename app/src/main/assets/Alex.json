@@ -1,0 +1,36 @@
+{
+  "special_moves":[],
+  "super_arts":[],
+  "command_moves":[
+    {
+      "name": "Chop",
+      "moveList":[
+        "right",
+        "medium_punch"
+      ]
+    },
+    {
+      "name": "Lariat",
+      "moveList":[
+        "right",
+        "high_punch"
+      ]
+    },
+    {
+      "name": "Headbutt",
+      "moveList":[
+        "left",
+        "high_punch"
+      ]
+    },
+    {
+      "name": " Flying Cross Chop ",
+      "moveList":[
+        "air",
+        "down",
+        "high_punch"
+      ]
+    }
+  ],
+  "target_combos":[]
+}

@@ -7,7 +7,6 @@ import java.util.List;
 public class Attacks implements Serializable{
 
     private List<Move> special_moves, super_arts, target_combos, command_moves;
-    private String character;
 
     public List<Move> getSpecial_moves() {
         return special_moves;
@@ -25,7 +24,4 @@ public class Attacks implements Serializable{
         return command_moves;
     }
 
-    public String getCharacterName() {
-        return character;
-    }
 }
