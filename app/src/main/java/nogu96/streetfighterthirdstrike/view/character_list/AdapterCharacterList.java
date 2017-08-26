@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -58,9 +59,24 @@ public class AdapterCharacterList extends RecyclerView.Adapter implements View.O
         return characterList.get(position);
     }
 
-    public void setListToShow(List<Character> characterList){
+    private void setListToShow(List<Character> characterList){
         this.characterList = characterList;
         notifyDataSetChanged();
+    }
+
+    public void searchForCharacter(String query){
+        List<Character> newCharacterList = new ArrayList<>();
+
+        if (!query.equals("")) {
+            for (Character character : characterList) {
+                if (character.getName().contains(query)) {
+                    newCharacterList.add(character);
+                }
+            }
+        }else{
+            newCharacterList = characterList;
+        }
+        setListToShow(newCharacterList);
     }
 
     private class ViewHolder extends RecyclerView.ViewHolder{

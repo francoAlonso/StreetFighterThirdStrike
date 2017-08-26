@@ -11,6 +11,8 @@
     <string name="tab_moves">Moves</string>
     <string name="tab_stats">Stats</string>
     <string name="tab_videos">Videos</string>
+    
+    <string name="search">Search</string>
 
     <string name="internet_conection">Please connect to internet</string>
 

@@ -37,6 +37,10 @@ public class CharacterListFragment extends Fragment {
         return view;
     }
 
+    public void searchListToShow(String query){
+        adapterCharacterList.searchForCharacter(query);
+    }
+
     @Override
     public void onAttach(Context context){
         super.onAttach(context);

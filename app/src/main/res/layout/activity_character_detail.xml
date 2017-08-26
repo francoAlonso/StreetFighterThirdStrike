@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context="nogu96.streetfighterthirdstrike.view.character_detail.CharacterDetailActivity">
 
+    <include layout="@layout/toolbar"/>
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout_character_detail"
         android:layout_width="match_parent"
