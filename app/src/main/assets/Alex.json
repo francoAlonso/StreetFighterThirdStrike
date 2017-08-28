@@ -1,6 +1,104 @@
 {
-  "special_moves":[],
-  "super_arts":[],
+  "special_moves":[
+    {
+      "name": "Flash Chop",
+      "moveList":[
+        "down",
+        "right_down",
+        "right",
+        "punch"
+      ]
+    },
+    {
+      "name": "Slash Elbow",
+      "moveList":[
+        "hold",
+        "left",
+        "right",
+        "kick"
+      ]
+    },
+    {
+      "name": "Powerbomb",
+      "moveList":[
+        "right",
+        "right_down",
+        "down",
+        "left_down",
+        "left",
+        "punch"
+      ]
+    },
+    {
+      "name": "Stomp",
+      "moveList":[
+        "hold",
+        "down",
+        "up",
+        "kick"
+      ]
+    },
+    {
+      "name": "Spiral D.D.T.",
+      "moveList":[
+        "right",
+        "right_down",
+        "down",
+        "left_down",
+        "left",
+        "kick"
+      ]
+    },
+    {
+      "name": "Air Knee Smash",
+      "moveList":[
+        "right",
+        "down",
+        "right_down",
+        "kick"
+      ]
+    }
+  ],
+  "super_arts":[
+    {
+      "name": "Hyper Bomb",
+      "moveList":[
+        "right",
+        "right_down",
+        "down",
+        "left_down",
+        "left",
+        "left_up",
+        "up",
+        "right_up",
+        "punch"
+      ]
+    },
+    {
+      "name": "Boomerang Raid",
+      "moveList":[
+        "down",
+        "right_down",
+        "right",
+        "down",
+        "right_down",
+        "right",
+        "punch"
+      ]
+    },
+    {
+      "name": "Stun Gun Headbutt",
+      "moveList":[
+        "down",
+        "right_down",
+        "right",
+        "down",
+        "right_down",
+        "right",
+        "punch"
+      ]
+    }
+  ],
   "command_moves":[
     {
       "name": "Chop",
@@ -32,5 +130,22 @@
       ]
     }
   ],
-  "target_combos":[]
+  "target_combos":[
+    {
+      "name": "combo1",
+      "moveList":[
+        "down",
+        "low_kick",
+        "medium_kick"
+      ]
+    },
+    {
+      "name": "combo2",
+      "moveList":[
+        "down",
+        "low_kick",
+        "high_kick"
+      ]
+    }
+  ]
 }

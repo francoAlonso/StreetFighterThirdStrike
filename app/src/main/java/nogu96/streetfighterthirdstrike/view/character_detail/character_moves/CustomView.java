@@ -11,7 +11,7 @@ import nogu96.streetfighterthirdstrike.R;
 
 public class CustomView extends View{
 
-    private int size = 120;
+    private int size = 100;
 
     public CustomView(Context context, String background) {
         super(context);

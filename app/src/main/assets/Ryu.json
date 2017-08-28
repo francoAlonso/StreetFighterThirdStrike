@@ -101,21 +101,6 @@
         "high_punch",
         "high_kick"
       ]
-    },
-    {
-      "name": "combo2",
-      "moveList": [
-        "low_punch",
-        "low_kick"
-      ]
-    },
-    {
-      "name": "combo3",
-      "moveList": [
-        "left",
-        "low_punch",
-        "low_kick"
-      ]
     }
   ]
 }

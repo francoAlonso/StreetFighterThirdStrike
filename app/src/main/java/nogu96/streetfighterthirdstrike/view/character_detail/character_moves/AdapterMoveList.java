@@ -56,7 +56,7 @@ public class AdapterMoveList extends RecyclerView.Adapter {
             txtName.setText(move.getName());
             //genero de manera dinamica los commando para el movimiento
             for (String command : move.getMoveList()){
-                if(command.equals("far") || command.equals("close") || command.equals("air")) {
+                if(command.equals("far") || command.equals("close") || command.equals("air") || command.equals("hold")) {
                     linearLayout.addView(new CustomTextView(context, command));
                 }else{
                     linearLayout.addView(new CustomView(context, command));
