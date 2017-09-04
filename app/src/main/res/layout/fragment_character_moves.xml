@@ -20,8 +20,7 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_special_character_moves"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                style="@style/recycler_view_character_moves"/>
 
             <TextView
                 android:id="@+id/text_super_arts"
@@ -30,8 +29,7 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_super_character_arts"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                style="@style/recycler_view_character_moves"/>
 
             <TextView
                 android:id="@+id/text_command_moves"
@@ -40,8 +38,7 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_command_character_moves"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                style="@style/recycler_view_character_moves"/>
 
             <TextView
                 android:id="@+id/text_target_combos"
@@ -50,8 +47,7 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_target_character_combos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                style="@style/recycler_view_character_moves"/>
 
         </LinearLayout>
 

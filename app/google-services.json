@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "812838665299",
+    "firebase_url": "https://street-fighter-third-strike.firebaseio.com",
+    "project_id": "street-fighter-third-strike",
+    "storage_bucket": "street-fighter-third-strike.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812838665299:android:7ff7b6330cb01c7a",
+        "android_client_info": {
+          "package_name": "nogu96.streetfighterthirdstrike"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812838665299-qifj7r86b25bsjj2pealeiushcst01av.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nogu96.streetfighterthirdstrike",
+            "certificate_hash": "ee119404063644f358a2c4b9ce190acaff7dcea6"
+          }
+        },
+        {
+          "client_id": "812838665299-v5ih90lh5enobp3ig8n9svquvl9ceu72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA5V6amrGTkWDmfFr39saVN_aVNkmzmZ0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812838665299-v5ih90lh5enobp3ig8n9svquvl9ceu72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
