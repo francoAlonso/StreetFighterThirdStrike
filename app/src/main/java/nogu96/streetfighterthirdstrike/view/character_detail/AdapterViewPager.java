@@ -24,6 +24,12 @@ public class AdapterViewPager extends FragmentStatePagerAdapter{
         };
     }
 
+    public void replace(Fragment fragment, int position){
+        fragmentList.remove(position);
+        fragmentList.add(position, fragment);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getCount() {
         return fragmentList.size();

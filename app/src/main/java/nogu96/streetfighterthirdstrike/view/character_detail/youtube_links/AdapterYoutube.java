@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -71,7 +71,7 @@ public class AdapterYoutube extends RecyclerView.Adapter implements View.OnClick
 
         public void loadData(Youtube youtube){
             txtTitle.setText(youtube.getTitle());
-            Picasso.with(context)
+            Glide.with(context)
                     .load(youtube.getImageUrl())
                     .into(imageView);
         }

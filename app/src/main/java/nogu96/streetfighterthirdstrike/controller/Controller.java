@@ -23,7 +23,7 @@ public class Controller {
                 }
             });
         }else {
-            Toast.makeText(context, R.string.internet_conection, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, R.string.internet_conection, Toast.LENGTH_SHORT).show();
         }
     }
 

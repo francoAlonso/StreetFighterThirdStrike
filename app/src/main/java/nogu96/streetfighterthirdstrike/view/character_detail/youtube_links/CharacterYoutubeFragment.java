@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +45,7 @@ public class CharacterYoutubeFragment extends Fragment {
             @Override
             public void finish(List<Youtube> resultado) {
                 view.findViewById(R.id.progress_bar_character_youtube).setVisibility(View.GONE);
+
                 adapterYoutube = new AdapterYoutube(getContext(), resultado);
                 adapterYoutube.setListener(new YoutubeListener());
                 recyclerView.setAdapter(adapterYoutube);

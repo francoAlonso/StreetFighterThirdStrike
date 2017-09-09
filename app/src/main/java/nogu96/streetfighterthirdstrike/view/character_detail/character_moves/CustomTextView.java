@@ -13,10 +13,10 @@ public class CustomTextView extends android.support.v7.widget.AppCompatTextView 
     public CustomTextView(Context context, String text) {
         super(context);
         //al parecer no funcionan todos los elementos de un style al usarlo
-        this.setText("("+text+")");
-        this.setTextSize(20);
-        this.setLayoutParams(new LinearLayout.LayoutParams(dimens, dimens));
-        this.setGravity(Gravity.CENTER);
+        setText(text);
+        setTextSize(20);
+        setLayoutParams(new LinearLayout.LayoutParams(dimens, dimens));
+        setGravity(Gravity.CENTER);
     }
 
 }

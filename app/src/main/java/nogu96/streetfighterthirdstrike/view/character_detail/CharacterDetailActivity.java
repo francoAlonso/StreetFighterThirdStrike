@@ -3,10 +3,13 @@ package nogu96.streetfighterthirdstrike.view.character_detail;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import nogu96.streetfighterthirdstrike.R;
 import nogu96.streetfighterthirdstrike.model.dao.DAOCharacterDetailFragment;
@@ -21,6 +24,7 @@ public class CharacterDetailActivity extends AppCompatActivity implements
     public static final String CHARACTER_KEY = "character key";
 
     private CustomViewPager viewPager;
+    private AdapterViewPager adapterViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +41,11 @@ public class CharacterDetailActivity extends AppCompatActivity implements
         getSupportActionBar().setTitle(character.getName());
 
         viewPager = (CustomViewPager) findViewById(R.id.view_pager_character_detail);
-        viewPager.setAdapter(
-                new AdapterViewPager(getApplicationContext(),
+        adapterViewPager =  new AdapterViewPager(
+                getApplicationContext(),
                 getSupportFragmentManager(),
-                new DAOCharacterDetailFragment().getFragmentList(this, character))
-        );
+                new DAOCharacterDetailFragment().getFragmentList(this, character));
+        viewPager.setAdapter(adapterViewPager);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout_character_detail);
         tabLayout.setupWithViewPager(viewPager);
@@ -60,6 +64,12 @@ public class CharacterDetailActivity extends AppCompatActivity implements
         }else{
             viewPager.setPagingEnabled(false);
         }
+    }
+
+    //cuando falla la conexion a internet
+    @Override
+    public void tryAgain(Fragment fragment, int position) {
+        adapterViewPager.replace(fragment, position);
     }
 
     @Override
