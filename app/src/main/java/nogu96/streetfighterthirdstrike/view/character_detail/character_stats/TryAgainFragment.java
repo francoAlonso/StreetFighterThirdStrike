@@ -44,11 +44,21 @@ public class TryAgainFragment extends Fragment {
         view.findViewById(R.id.btn_try_again).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CharacterStatsFragment characterStatsFragment = new CharacterStatsFragment();
+                Fragment fragment = null;
                 Bundle bundle = new Bundle();
-                bundle.putString(characterStatsFragment.STATS_KEY, getArguments().getString(CHARACTER_KEY));
-                characterStatsFragment.setArguments(bundle);
-                listener.tryAgain(characterStatsFragment, getArguments().getInt(POSITION_KEY));
+                switch (getArguments().getInt(POSITION_KEY)){
+                    case 1://en el caso de statsFragment
+                        fragment = new CharacterStatsFragment();
+                        bundle.putString(CharacterStatsFragment.STATS_KEY, getArguments().getString(CHARACTER_KEY));
+                        break;
+
+                    case 2://en el caso de youtubeFragment
+
+                        break;
+                }
+                bundle.putString(CharacterStatsFragment.STATS_KEY, getArguments().getString(CHARACTER_KEY));
+                fragment.setArguments(bundle);
+                listener.tryAgain(fragment, getArguments().getInt(POSITION_KEY));
             }
         });
 

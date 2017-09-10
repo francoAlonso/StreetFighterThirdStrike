@@ -20,6 +20,7 @@ import com.google.firebase.storage.StorageException;
 import com.google.firebase.storage.StorageReference;
 
 import nogu96.streetfighterthirdstrike.R;
+import nogu96.streetfighterthirdstrike.controller.Controller;
 
 /**
  * A simple {@link Fragment} subclass.
