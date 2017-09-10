@@ -7,14 +7,15 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/txt_try_again"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="20sp"
-        android:text="@string/try_again_message"/>
+        android:text="@string/unexpected_error"/>
 
     <Button
-        android:id="@+id/try_again"
+        android:id="@+id/btn_try_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/try_again"/>

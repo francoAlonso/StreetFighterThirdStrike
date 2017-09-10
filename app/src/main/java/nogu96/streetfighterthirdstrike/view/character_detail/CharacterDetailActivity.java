@@ -15,11 +15,13 @@ import nogu96.streetfighterthirdstrike.R;
 import nogu96.streetfighterthirdstrike.model.dao.DAOCharacterDetailFragment;
 import nogu96.streetfighterthirdstrike.model.pojo.character.Character;
 import nogu96.streetfighterthirdstrike.view.character_detail.character_stats.CharacterStatsFragment;
+import nogu96.streetfighterthirdstrike.view.character_detail.character_stats.TryAgainFragment;
 import nogu96.streetfighterthirdstrike.view.character_detail.youtube_links.CharacterYoutubeFragment;
 
 public class CharacterDetailActivity extends AppCompatActivity implements
         CharacterStatsFragment.OnFragmentInteractionListener,
-        CharacterYoutubeFragment.OnFragmentInteraction{
+        CharacterYoutubeFragment.OnFragmentInteraction,
+        TryAgainFragment.OnFragmentInteractionListener{
 
     public static final String CHARACTER_KEY = "character key";
 
@@ -66,7 +68,7 @@ public class CharacterDetailActivity extends AppCompatActivity implements
         }
     }
 
-    //cuando falla la conexion a internet
+    //cuando falla la conexion a internet. El tryAgainFragment y el CharacterStatsFragment comparten esta interfaz
     @Override
     public void tryAgain(Fragment fragment, int position) {
         adapterViewPager.replace(fragment, position);

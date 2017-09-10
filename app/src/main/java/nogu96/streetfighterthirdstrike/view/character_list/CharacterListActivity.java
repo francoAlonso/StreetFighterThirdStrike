@@ -67,7 +67,7 @@ public class CharacterListActivity extends AppCompatActivity{
         final EditText searchEditText = (EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.white));
         searchEditText.setHint(R.string.search);
-        searchEditText.setHintTextColor(getResources().getColor(R.color.gray));
+        searchEditText.setHintTextColor(getResources().getColor(R.color.secundaryText));
 
         //listener del texto del searchView
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

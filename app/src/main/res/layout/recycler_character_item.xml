@@ -14,13 +14,14 @@
         android:layout_height="130dp"
         android:scaleType="centerCrop"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/black"
+        app:civ_border_color="@color/colorDivider"
         android:src="@drawable/ryu"/>
 
     <TextView
         android:id="@+id/text_view_character_item"
         android:text="ryu"
         android:textSize="20sp"
+        android:textColor="@color/primaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
