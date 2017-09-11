@@ -16,10 +16,12 @@ import nogu96.streetfighterthirdstrike.R;
 import nogu96.streetfighterthirdstrike.controller.Controller;
 import nogu96.streetfighterthirdstrike.internet.ResultListener;
 import nogu96.streetfighterthirdstrike.model.pojo.youtube.Youtube;
+import nogu96.streetfighterthirdstrike.view.character_detail.TryAgainFragment;
 
 public class CharacterYoutubeFragment extends Fragment {
 
     public static final String YOUTUBE_KEY = "youtube key";
+    private static final int POSITION = 2;
 
     private AdapterYoutube adapterYoutube;
     private RecyclerView recyclerView;
@@ -35,24 +37,33 @@ public class CharacterYoutubeFragment extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_character_youtube);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        getVideosFromYoutube();
+        Controller controller = new Controller();
 
+        final String youtubeKey = getArguments().getString(YOUTUBE_KEY);
+
+        controller.getYoutubeList(getContext(), youtubeKey, new ResultListener<List<Youtube>>() {
+            @Override
+            public void finish(List<Youtube> resultado) {
+                if(resultado != null) {
+                    adapterYoutube = new AdapterYoutube(getContext(), resultado);
+                    adapterYoutube.setListener(new YoutubeListener());
+                    recyclerView.setAdapter(adapterYoutube);
+                    //hay que sacar el progress bar
+                    view.findViewById(R.id.progress_bar_character_youtube).setVisibility(View.GONE);
+                }else{
+                    fragmentInteraction.tryAgain(TryAgainFragment.create(getString(R.string.unexpected_error), youtubeKey, POSITION), POSITION);
+                }
+            }
+        });
+
+        
         return view;
     }
 
-    private void getVideosFromYoutube(){
-        new Controller().getYoutubeList(getContext(), getArguments().getString(YOUTUBE_KEY), new ResultListener<List<Youtube>>() {
-            @Override
-            public void finish(List<Youtube> resultado) {
-                view.findViewById(R.id.progress_bar_character_youtube).setVisibility(View.GONE);
-
-                adapterYoutube = new AdapterYoutube(getContext(), resultado);
-                adapterYoutube.setListener(new YoutubeListener());
-                recyclerView.setAdapter(adapterYoutube);
-            }
-        });
+    public interface OnFragmentInteraction{
+        void youtubePlayer(String videoId);
+        void tryAgain(Fragment fragment, int position);
     }
-
 
     @Override
     public void onAttach(Context context) {
@@ -62,10 +73,6 @@ public class CharacterYoutubeFragment extends Fragment {
         } else {
             throw new RuntimeException(context.toString() + " must implement OnFragmentDetailListener");
         }
-    }
-
-    public interface OnFragmentInteraction{
-        void youtubePlayer(String videoId);
     }
 
     @Override

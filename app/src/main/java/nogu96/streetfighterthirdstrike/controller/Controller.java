@@ -15,16 +15,14 @@ import nogu96.streetfighterthirdstrike.model.pojo.youtube.Youtube;
 public class Controller {
 
     public void getYoutubeList(Context context, String playlist_id, final ResultListener<List<Youtube>> viewListener){
-        if (thereisInternet(context)){
+       //if (thereisInternet(context)) {
             new DAOYoutubeApi().getYoutubeList(playlist_id, new ResultListener<List<Youtube>>() {
                 @Override
                 public void finish(List<Youtube> resultado) {
                     viewListener.finish(resultado);
                 }
             });
-        }else {
-            //Toast.makeText(context, R.string.internet_conection, Toast.LENGTH_SHORT).show();
-        }
+        //}
     }
 
 

@@ -4,18 +4,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
 import nogu96.streetfighterthirdstrike.R;
 import nogu96.streetfighterthirdstrike.model.dao.DAOCharacterDetailFragment;
 import nogu96.streetfighterthirdstrike.model.pojo.character.Character;
 import nogu96.streetfighterthirdstrike.view.character_detail.character_stats.CharacterStatsFragment;
-import nogu96.streetfighterthirdstrike.view.character_detail.character_stats.TryAgainFragment;
 import nogu96.streetfighterthirdstrike.view.character_detail.youtube_links.CharacterYoutubeFragment;
 
 public class CharacterDetailActivity extends AppCompatActivity implements

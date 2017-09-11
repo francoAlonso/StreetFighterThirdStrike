@@ -1,4 +1,4 @@
-package nogu96.streetfighterthirdstrike.view.character_detail.character_stats;
+package nogu96.streetfighterthirdstrike.view.character_detail;
 
 
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import nogu96.streetfighterthirdstrike.R;
+import nogu96.streetfighterthirdstrike.view.character_detail.character_stats.CharacterStatsFragment;
+import nogu96.streetfighterthirdstrike.view.character_detail.youtube_links.CharacterYoutubeFragment;
 
 public class TryAgainFragment extends Fragment {
 
@@ -53,10 +55,10 @@ public class TryAgainFragment extends Fragment {
                         break;
 
                     case 2://en el caso de youtubeFragment
-
+                        fragment = new CharacterYoutubeFragment();
+                        bundle.putString(CharacterYoutubeFragment.YOUTUBE_KEY, getArguments().getString(CHARACTER_KEY));
                         break;
                 }
-                bundle.putString(CharacterStatsFragment.STATS_KEY, getArguments().getString(CHARACTER_KEY));
                 fragment.setArguments(bundle);
                 listener.tryAgain(fragment, getArguments().getInt(POSITION_KEY));
             }

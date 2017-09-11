@@ -20,7 +20,7 @@ import com.google.firebase.storage.StorageException;
 import com.google.firebase.storage.StorageReference;
 
 import nogu96.streetfighterthirdstrike.R;
-import nogu96.streetfighterthirdstrike.controller.Controller;
+import nogu96.streetfighterthirdstrike.view.character_detail.TryAgainFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +28,8 @@ import nogu96.streetfighterthirdstrike.controller.Controller;
 public class CharacterStatsFragment extends Fragment{
 
     public static final String STATS_KEY = "stats key";
+    private static final int POSITION = 1;
+
     private OnFragmentInteractionListener fragmentListener;
 
     @Override
@@ -42,10 +44,10 @@ public class CharacterStatsFragment extends Fragment{
 
         StorageReference imageStorage =
                 FirebaseStorage
-                .getInstance()
-                .getReferenceFromUrl("gs://street-fighter-third-strike.appspot.com")
-                .child("character_stats")
-                .child(characteStats + ".jpg");
+                        .getInstance()
+                        .getReferenceFromUrl("gs://street-fighter-third-strike.appspot.com")
+                        .child("character_stats")
+                        .child(characteStats + ".jpg");
 
         //traigo la imagen de firebase
         imageStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -62,9 +64,9 @@ public class CharacterStatsFragment extends Fragment{
             @Override
             public void onFailure(@NonNull Exception e) {
                 if (e instanceof StorageException) {
-                    fragmentListener.tryAgain(TryAgainFragment.create(getString(R.string.image_not_found), characteStats, 1), 1);
+                    fragmentListener.tryAgain(TryAgainFragment.create(getString(R.string.image_not_found), characteStats, POSITION), POSITION);
                 }else{
-                    fragmentListener.tryAgain(TryAgainFragment.create(getString(R.string.unexpected_error), characteStats, 1), 1);
+                    fragmentListener.tryAgain(TryAgainFragment.create(getString(R.string.unexpected_error), characteStats, POSITION), POSITION);
                 }
             }
         });
@@ -75,6 +77,7 @@ public class CharacterStatsFragment extends Fragment{
                 fragmentListener.onScaleChange(scaleFactor);
             }
         });
+
 
         return view;
     }
