@@ -63,10 +63,27 @@ public class CharacterStatsFragment extends Fragment{
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                if (e instanceof StorageException) {
-                    fragmentListener.tryAgain(TryAgainFragment.create(getString(R.string.image_not_found), characteStats, POSITION), POSITION);
-                }else{
-                    fragmentListener.tryAgain(TryAgainFragment.create(getString(R.string.unexpected_error), characteStats, POSITION), POSITION);
+                /*
+                This error happens due to the combined effect of two factors:
+                The HTTP request, when complete,
+                 invokes either onResponse() or onError()
+                (which work on the main thread) without knowing whether the Activity
+                 is still in the foreground or not. If the Activity is gone (the user navigated elsewhere),
+                 getActivity() returns null.
+                The Volley Response is expressed as an anonymous inner class,
+                 which implicitly holds a strong reference to the outer Activity class.
+                 This results in a classic memory leak.
+                */
+                if(isAdded()) {
+                    String message = "";
+
+                    if (e instanceof StorageException) {
+                        message = getString(R.string.image_not_found);
+                    } else {
+                        message = getString(R.string.unexpected_error);
+                    }
+
+                    fragmentListener.tryAgain(TryAgainFragment.create(message, characteStats, POSITION), POSITION);
                 }
             }
         });
@@ -86,7 +103,6 @@ public class CharacterStatsFragment extends Fragment{
         void onScaleChange(float scaleFactor);
         void tryAgain(Fragment fragment, int position);
     }
-
 
     @Override
     public void onAttach(Context context) {

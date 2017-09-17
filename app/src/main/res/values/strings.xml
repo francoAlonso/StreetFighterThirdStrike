@@ -18,4 +18,6 @@
     <string name="image_not_found">Image not found</string>
     <string name="internet_conection">Please connect to internet</string>
 
+    <string name="shoryuken_wiki">Click to go wiki.shoryukeno</string>
+
 </resources>
