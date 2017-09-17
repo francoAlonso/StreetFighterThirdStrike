@@ -53,11 +53,13 @@ public class CharacterStatsFragment extends Fragment{
         imageStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                Glide.with(getContext())
-                        .load(uri)
-                        .into(photoView);
-                //el progressbar tiene que desaparecer dps de traer la imagen de glide
-                view.findViewById(R.id.progress_bar_character_stats).setVisibility(View.GONE);
+                if(getActivity() != null && isAdded()) {
+                    Glide.with(getContext())
+                            .load(uri)
+                            .into(photoView);
+                    //el progressbar tiene que desaparecer dps de traer la imagen de glide
+                    view.findViewById(R.id.progress_bar_character_stats).setVisibility(View.GONE);
+                }
             }
 
         }).addOnFailureListener(new OnFailureListener() {
@@ -74,7 +76,7 @@ public class CharacterStatsFragment extends Fragment{
                  which implicitly holds a strong reference to the outer Activity class.
                  This results in a classic memory leak.
                 */
-                if(isAdded()) {
+                if(getActivity() != null && isAdded()) {
                     String message = "";
 
                     if (e instanceof StorageException) {
